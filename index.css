@@ -2,3 +2,41 @@ body {
   background-color:#000;
   color:#FFF;
 }
+
+a {
+	color:#88F;
+}
+
+a:visited {
+	color:#B4F;
+}
+
+img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 37.5vw;
+}
+
+p {
+	font-size: 16px;
+	margin-left:1.5625vw;
+}
+
+hr {
+	margin-left:1.5625vw;
+}
+
+#NavDiv{
+	padding-left: 25vw;
+	padding-right: 25vw;
+	padding-top: 6.25vh;
+	padding-bottom: 6.25vh;
+}
+
+#GlobalDiv{
+	padding-left: 12.5vw;
+	padding-right: 12.5vw;
+	padding-top: 6.25vh;
+	padding-bottom: 6.25vh;
+}
