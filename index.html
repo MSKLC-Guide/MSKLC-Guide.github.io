@@ -2,18 +2,51 @@
 <html>
 <head>
 <link rel="stylesheet" href="index.css">
+<title>MSKLC Guide</title>
+<link rel="shortcut icon" href="img/favicon.png" />
 </head>
 <body>
-<h1>MSKLC Guide</h1>
+<div id="GlobalDiv">
+	<h1>MSKLC Guide</h1>
+		<p>This guide is not an introduction to the basic features of MSKLC, the Microsoft Keyboard Layout Creator. The application is straightforward enough for most people to be able to understand it by playing around with it. Instead, I would like to spread information about lesser-known functionalities.</p>
+		
+		<div id="NavDiv">
+		<h4 class="Navigation">Navigation:</h4>
+		<a href="#0" class="Navigation"> 00: How to install the latest version of MSKLC </a><br>
+		<a href="#1" class="Navigation"> 01: Unlocking MSKLC's features </a><br>
+		<a href="#2" class="Navigation"> 00: 02: Remapping Shortcuts </a><br>
+		</div>
 
-<p>This guide is not an introduction to the basic features of MSKLC, the Microsoft Keyboard Layout Creator. The application is straightforward enough for most people to be able to understand it by playing around with it. Instead, I would like to spread information about lesser-known functionalities.</p>
+		</p>
+		
+	<h2 id="0">00: How to install the latest version of MSKLC</h2>
+		<p>Everything to follow assumes you have MSKLC's latest version installed, which, at the time of writing (and probably for the rest of time) is version 1.4.6000.2</p>
+		<p>To check MSKLC's version, select "Help" in the menu, and then go on "About".
+		<br><br>
+		<a href="https://www.microsoft.com/en-us/download/details.aspx?id=102134">Download the latest version</a>
+		-
+		<a href="https://web.archive.org/web/20200810055750/https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe">Another way to download</a>
+		</p>
 
-<h2 id="0">How to install the latest version of MSKLC</h2>
-<p>Everything to follow assumes you have MSKLC's latest version installed, which, at the time of writing (and probably for the rest of time) is version 1.4.6000.2</p>
-  <p>To check MSKLC's version, select "Help" in the menu, and then go on "About".</p>
-  <a href="https://www.microsoft.com/en-us/download/details.aspx?id=102134">Download the latest version</a>
-  <a href="https://web.archive.org/web/20200810055750/https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe">Another way to download</a>
-  
-  <h2 id="1">Unlocking MSKLC's features</h2>
+	<h2 id="1">01: Unlocking MSKLC's features</h2>
+		<p>In order to be able to work with MSKLC, we'll all want to be on the same page. Hence, make sure to enable all the settings in <i>AltMenu > View > Options</i>:</p>
+		<img src="img/options.png">
+		<p>Choose whatever keyboard layout type you desire. The layout types only differ cosmetically. Note that the only key position that differs between the three is the key I coloured red.</p>
+		
+	<h2 id="2">02: Remapping Shortcuts</h2>
+		<p>Let's say you have changed to Dvorak, but are irritated by the new placements of ZXCV. Now copying and pasting is way harder! But there is a solution that requires no other software: You can remap the Virtual Keys (henceforth: VKs) in the '.klc' file in order to achieve that.</p>
+		<hr>
+		<p>Step 0: Open the '.klc' file of your layout in a text editor of your choice.</p>
+		<p>Step 1: Scroll down to the lines that have all the symbols and numbers in them. That's where the data sits. The data is separated into columns: Look for the column that says 'VK_' at the top, which should be the second column. The letters you see there should reflect the layout you opened, so if you type in Dvorak, the letters would read something like PYFCG.</p>
+		<p>Step 2: Now, let's change that. You will want to alter the 'VK_' column to carry the Qwerty-layout, rather than whatever layout you have loaded up.<p>
+		<p>Step 3: Save the file, and load it back up in MSKLC. If you build and install the layout now, you should be able to use Qwerty's shortcuts!<p>
+		<hr>
+		<p>Helpful Information for Step 2: In order to make your life easier, also load up a Qwerty.klc file in the text editor and take the layout information from there. In order to get your Qwerty.klc file, click "AltMenu > File > Load Existing Keyboard > Qwerty", and then save that to a .klc file.<p>
+		<p> See <a href="http://www.sensefulsolutions.com/2010/08/how-to-fix-keyboard-shortcuts-in-klc-eg.html#which-keys">this page</a>  for information on what can go in the 'VK_' column.</p>
+		
+		
+		
+		&#x25A0
+</div>
 </body>
 </html>
