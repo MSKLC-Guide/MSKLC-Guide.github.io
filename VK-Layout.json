@@ -1,0 +1,490 @@
+[
+  {
+    "backcolor": "#222222",
+    "css": "* { font-family: monospace; }"
+  },
+  [
+    {
+      "c": "#444444",
+      "t": "#FFFFFF",
+      "w": 1.5
+    },
+    "Esc\nT01\n\n\n\n\nESCAPE",
+    {
+      "x": 1.5,
+      "w": 1.5
+    },
+    "F1\nT3B\n\n\n\n\nF1",
+    {
+      "w": 1.5
+    },
+    "F2\nT3C\n\n\n\n\nF2",
+    {
+      "w": 1.5
+    },
+    "F3\nT3D\n\n\n\n\nF3",
+    {
+      "w": 1.5
+    },
+    "F4\nT3E\n\n\n\n\nF4",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "F5\nT3F\n\n\n\n\nF5",
+    {
+      "w": 1.5
+    },
+    "F6\nT40\n\n\n\n\nF6",
+    {
+      "w": 1.5
+    },
+    "F7\nT41\n\n\n\n\nF7",
+    {
+      "w": 1.5
+    },
+    "F8\nT42\n\n\n\n\nF8",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "F9\nT43\n\n\n\n\nF9",
+    {
+      "w": 1.5
+    },
+    "F10\nT44\n\n\n\n\nF10",
+    {
+      "w": 1.5
+    },
+    "F11\nT57\n\n\n\n\nF11",
+    {
+      "w": 1.5
+    },
+    "F12\nT58\n\n\n\n\nF12",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "PrtSc\nX37\n\n\n\n\nSNAPSHOT",
+    {
+      "w": 1.5
+    },
+    "Scrolllock\nT54\n\n\n\n\nSCROLL",
+    {
+      "t": "#FFFFFF\n\n\n\n\n\n#ff0000",
+      "f": 2,
+      "w": 1.5
+    },
+    "Pause\n\nBreak\n\n\n\nit's complicated",
+    {
+      "x": 3,
+      "c": "#00BB00",
+      "t": "#000000",
+      "f": 3,
+      "w": 1.5
+    },
+    "Label\nScancode\n\n\n\n\nVK"
+  ],
+  [
+    {
+      "y": 0.5,
+      "c": "#444444",
+      "t": "#FFFFFF",
+      "w": 1.5
+    },
+    "`\nT29\n~\n\n\n\nOEM_3",
+    {
+      "w": 1.5
+    },
+    "1\nT02\n!\n\n\n\n'1'",
+    {
+      "w": 1.5
+    },
+    "2\nT03\n\"\n\n\n\n'2'",
+    {
+      "w": 1.5
+    },
+    "3\nT04\n£\n\n\n\n'3'",
+    {
+      "w": 1.5
+    },
+    "4\nT05\n$\n\n\n\n'4'",
+    {
+      "w": 1.5
+    },
+    "5\nT06\n%\n\n\n\n'5'",
+    {
+      "w": 1.5
+    },
+    "6\nT07\n^\n\n\n\n'6'",
+    {
+      "w": 1.5
+    },
+    "7\nT08\n&\n\n\n\n'7'",
+    {
+      "w": 1.5
+    },
+    "8\nT09\n*\n\n\n\n'8'",
+    {
+      "w": 1.5
+    },
+    "9\nT0A\n(\n\n\n\n'9'",
+    {
+      "w": 1.5
+    },
+    "0\nT0B\n)\n\n\n\n'0'",
+    {
+      "w": 1.5
+    },
+    "-\nT0C\n_\n\n\n\nOEM_MINUS",
+    {
+      "w": 1.5
+    },
+    "=\nT0D\n+\n\n\n\nOEM_PLUS",
+    {
+      "w": 3
+    },
+    "Backspace\nT0E\n\n\n\n\nBACK",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "Insert\nX52\n\n\n\n\nINSERT",
+    {
+      "w": 1.5
+    },
+    "Home\nX47\n\n\n\n\nHOME",
+    {
+      "w": 1.5
+    },
+    "PgUp\nX49\n\n\n\n\nPRIOR",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "Num Lock\nT45\n\n\n\n\nNUMLOCK",
+    {
+      "w": 1.5
+    },
+    "/\nX35\n\n\n\n\nDIVIDE",
+    {
+      "w": 1.5
+    },
+    "*\nT37\n\n\n\n\nMULTIPLY",
+    {
+      "w": 1.5
+    },
+    "-\nT4A\n\n\n\n\nSUBTRACT"
+  ],
+  [
+    {
+      "w": 2.25
+    },
+    "Tab\nT0F\n\n\n\n\nTAB",
+    {
+      "w": 1.5
+    },
+    "Q\nT10\n\n\n\n\n'Q'",
+    {
+      "w": 1.5
+    },
+    "W\nT11\n\n\n\n\n'W'",
+    {
+      "w": 1.5
+    },
+    "E\nT12\n\n\n\n\n'E'",
+    {
+      "w": 1.5
+    },
+    "R\nT13\n\n\n\n\n'R'",
+    {
+      "w": 1.5
+    },
+    "T\nT14\n\n\n\n\n'T'",
+    {
+      "w": 1.5
+    },
+    "Y\nT15\n\n\n\n\n'Y'",
+    {
+      "w": 1.5
+    },
+    "U\nT16\n\n\n\n\n'U'",
+    {
+      "w": 1.5
+    },
+    "I\nT17\n\n\n\n\n'I'",
+    {
+      "w": 1.5
+    },
+    "O\nT18\n\n\n\n\n'O'",
+    {
+      "w": 1.5
+    },
+    "P\nT19\n\n\n\n\n'P'",
+    {
+      "w": 1.5
+    },
+    "[\nT1A\n{\n\n\n\nOEM_4",
+    {
+      "w": 1.5
+    },
+    "]\nT1B\n}\n\n\n\nOEM_6",
+    {
+      "x": 0.379999999999999,
+      "w": 1.875,
+      "h": 2,
+      "w2": 2.25,
+      "h2": 1,
+      "x2": -0.375
+    },
+    "\n\nEnter\nT1C\n\n\n\nRETURN",
+    {
+      "x": 0.745000000000001,
+      "w": 1.5
+    },
+    "Delete\nX53\n\n\n\n\nDELETE",
+    {
+      "w": 1.5
+    },
+    "End\nX4F\n\n\n\n\nEND",
+    {
+      "w": 1.5
+    },
+    "PgDn\nX51\n\n\n\n\nNEXT",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "Home\nT47\n7\n\n\n\nHOME",
+    {
+      "w": 1.5
+    },
+    "↑\nT48\n8\n\n\n\nUP",
+    {
+      "w": 1.5
+    },
+    "PgUp\nT49\n9\n\n\n\nPRIOR",
+    {
+      "w": 1.5,
+      "h": 2
+    },
+    "+\nT4E\n\n\n\n\nADD"
+  ],
+  [
+    {
+      "w": 2.625
+    },
+    "Caps Lock\nT3A\n\n\n\n\nCAPITAL",
+    {
+      "x": 0.004999999999999893,
+      "w": 1.5
+    },
+    "A\nT1E\n\n\n\n\n'A'",
+    {
+      "w": 1.5
+    },
+    "S\nT1F\n\n\n\n\n'S'",
+    {
+      "w": 1.5
+    },
+    "D\nT20\n\n\n\n\n'D'",
+    {
+      "c": "#555555",
+      "w": 1.5,
+      "n": true
+    },
+    "F\nT21\n\n\n\n\n'F'",
+    {
+      "x": 1.7763568394002505e-15,
+      "c": "#444444",
+      "w": 1.5
+    },
+    "G\nT22\n\n\n\n\n'G'",
+    {
+      "w": 1.5
+    },
+    "H\nT23\n\n\n\n\n'H'",
+    {
+      "c": "#555555",
+      "w": 1.5,
+      "n": true
+    },
+    "J\nT24\n\n\n\n\n'J'",
+    {
+      "c": "#444444",
+      "w": 1.5
+    },
+    "K\nT25\n\n\n\n\n'K'",
+    {
+      "w": 1.5
+    },
+    "L\nT26\n\n\n\n\n'L'",
+    {
+      "x": -3.552713678800501e-15,
+      "w": 1.5
+    },
+    ";\nT27\n:\n\n\n\nOEM_1",
+    {
+      "w": 1.5
+    },
+    "'\nT28\n@\n\n\n\nOEM_7",
+    {
+      "w": 1.5
+    },
+    "#\nT2B\n~\n\n\n\nOEM_5",
+    {
+      "x": 7.870000000000001,
+      "w": 1.5
+    },
+    "←\nT4B\n4\n\n\n\nLEFT",
+    {
+      "w": 1.5
+    },
+    "\nT4C\n5\n\n\n\nCLEAR",
+    {
+      "w": 1.5
+    },
+    "→\nT4D\n6\n\n\n\nRIGHT"
+  ],
+  [
+    {
+      "w": 1.875
+    },
+    "Shift\nT2A\n\n\n\n\nLSHIFT",
+    {
+      "x": 0.004999999999999893,
+      "w": 1.5
+    },
+    "\\\nT56\n|\n\n\n\nOEM_102",
+    {
+      "w": 1.5
+    },
+    "Z\nT2C\n\n\n\n\n'Z'",
+    {
+      "w": 1.5
+    },
+    "X\nT2D\n\n\n\n\n'X'",
+    {
+      "w": 1.5
+    },
+    "C\nT2E\n\n\n\n\n'C'",
+    {
+      "w": 1.5
+    },
+    "V\nT2F\n\n\n\n\n'V'",
+    {
+      "x": 1.7763568394002505e-15,
+      "w": 1.5
+    },
+    "B\nT30\n\n\n\n\n'B'",
+    {
+      "w": 1.5
+    },
+    "N\nT31\n\n\n\n\n'N'",
+    {
+      "w": 1.5
+    },
+    "M\nT32\n\n\n\n\n'M'",
+    {
+      "w": 1.5
+    },
+    ",\nT33\n<\n\n\n\nOEM_COMMA",
+    {
+      "w": 1.5
+    },
+    ".\nT34\n>\n\n\n\nOEM_PERIOD",
+    {
+      "x": -3.552713678800501e-15,
+      "w": 1.5
+    },
+    "/\nT35\n?\n\n\n\nOEM_2",
+    {
+      "x": -0.004999999999999005,
+      "w": 4.125
+    },
+    "Shift\nT36\n\n\n\n\nRSHIFT",
+    {
+      "x": 2.25,
+      "w": 1.5
+    },
+    "↑\nT48\n\n\n\n\nUP",
+    {
+      "x": 2.25,
+      "w": 1.5
+    },
+    "End\nT4F\n1\n\n\n\nEND",
+    {
+      "w": 1.5
+    },
+    "↓\nT50\n2\n\n\n\nDOWN",
+    {
+      "w": 1.5
+    },
+    "PgDn\nT51\n3\n\n\n\nNEXT",
+    {
+      "w": 1.5,
+      "h": 2
+    },
+    "Enter\nX1C\n\n\n\n\nRETURN"
+  ],
+  [
+    {
+      "w": 1.875
+    },
+    "Ctrl\nT1D\n\n\n\n\nLCONTROL",
+    {
+      "x": 0.004999999999999893,
+      "w": 1.875
+    },
+    "Win\nX5B\n\n\n\n\nLWIN",
+    {
+      "x": -0.004999999999999893,
+      "w": 1.875
+    },
+    "Alt\nT38\n\n\n\n\nLMENU",
+    {
+      "w": 9.375
+    },
+    "[SPACE]\nT39\n\n\n\n\n' '\n\n\n[space's VK is just two apostrophes separated by a space]",
+    {
+      "w": 1.875
+    },
+    "AltGr\nX38\n\n\n\n\nRMENU",
+    {
+      "x": 0.004999999999999005,
+      "w": 1.875
+    },
+    "Win\nX5C\n\n\n\n\nRWIN",
+    {
+      "x": -0.004999999999999005,
+      "w": 1.875
+    },
+    "Menu\nX5D\n\n\n\n\nAPPS",
+    {
+      "w": 1.875
+    },
+    "Ctrl\nX1D\n\n\n\n\nRCONTROL",
+    {
+      "x": 0.75,
+      "w": 1.5
+    },
+    "←\nT4B\n\n\n\n\nLEFT",
+    {
+      "w": 1.5
+    },
+    "↓\nT50\n\n\n\n\nDOWN",
+    {
+      "w": 1.5
+    },
+    "→\nT4D\n\n\n\n\nRIGHT",
+    {
+      "x": 0.75,
+      "w": 3
+    },
+    "Ins\nT52\n0\n\n\n\nINSERT",
+    {
+      "w": 1.5
+    },
+    "Del\nT53\n.\n\n\n\nDELETE"
+  ]
+]

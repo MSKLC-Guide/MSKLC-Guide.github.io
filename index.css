@@ -1,10 +1,12 @@
 body {
   background-color:#000;
   color:#FFF;
+	font-family: monospace;
 }
 
 a {
 	color:#88F;
+	font-size:16px;
 }
 
 a:visited {
@@ -15,12 +17,18 @@ img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 37.5vw;
+	width:75%;
 }
-
 p {
 	font-size: 16px;
 	margin-left:1.5625vw;
+	text-indent:-0.75em;
+	padding-left:0.75em;
+}
+
+i {
+	background-color:#444;
+	font-style:normal;
 }
 
 hr {
@@ -28,8 +36,8 @@ hr {
 }
 
 #NavDiv{
-	padding-left: 25vw;
-	padding-right: 25vw;
+	padding-left: 12.5vw;
+	padding-right: 12.5vw;
 	padding-top: 6.25vh;
 	padding-bottom: 6.25vh;
 }
@@ -39,4 +47,8 @@ hr {
 	padding-right: 12.5vw;
 	padding-top: 6.25vh;
 	padding-bottom: 6.25vh;
+}
+
+h2 {
+	margin-top: 3.125vw;
 }
