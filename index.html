@@ -1,113 +1,122 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="index.css">
-<title>MSKLC Guide</title>
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-</head>
-<body>
-<div id="GlobalDiv">
-	<h1>MSKLC Guide</h1>
-		<p>This guide is not an introduction to the basic features of MSKLC, the Microsoft Keyboard Layout Creator. The application is straightforward enough for most people to be able to understand it by playing around with it. Instead, I would like to spread information about lesser-known functionalities.</p>
-		
-		<div id="NavDiv">
-		<h3 class="Navigation">Navigation:</h3>
-		<a href="#0" class="Navigation"> 00: How to install the latest version of MSKLC </a><br>
-		<a href="#1" class="Navigation"> 01: Unlocking MSKLC's features </a><br>
-		<a href="#2" class="Navigation"> 02: Remapping Shortcuts </a><br>
-		<a href="#3" class="Navigation"> 03: Remapping System Keys </a><br>
-		<a href="#4" class="Navigation"> 04: VK-Reference </a><br>
-		<a href="#5" class="Navigation"> 05: The issue with AltGr </a><br>
-		<a href="#6" class="Navigation"> 06: Uninstalling layouts </a><br>
-		<a href="#7" class="Navigation"> 07: When MSKLC just isn't enough </a><br>
-		<a href="#last" class="Navigation"> Acknowledgements </a><br>
-		</div>
-
-		</p>
-		
-	<h2 id="0"><a href="#GlobalDiv">▲</a> 00: How to install the latest version of MSKLC</h2>
-		<p>Everything to follow assumes you have MSKLC's latest version installed, which, at the time of writing, is version <i>1.4.6000.2</i></p>
-		<p>To check MSKLC's version, select "Help" in the menu, and then go on "About".
-		<br><br>
-		<a href="https://www.microsoft.com/en-us/download/details.aspx?id=102134">Download the latest version</a>
-		-
-		<a href="https://web.archive.org/web/20200810055750/https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe">Another way to download</a>
-		</p>
-
-	<h2 id="1"><a href="#GlobalDiv">▲</a> 01: Unlocking MSKLC's features</h2>
-		<p>In order to be able to work with all of MSKLC's functionalities, make sure to enable all the settings in <i>AltMenu > View > Options</i>:</p>
-		<a href="img/Options.png"target="_blank"><img src="img/Options.png"></a>
-		<p>Choose whatever keyboard layout type you desire. The layout types only differ cosmetically. Note that the only key position that changes location between the three is the key I coloured red.</p>
-		
-	<h2 id="2"><a href="#GlobalDiv">▲</a> 02: Remapping Shortcuts</h2>
-		<p>Let's say you have changed to Dvorak, but are irritated by the new placements of ZXCV. Now copying and pasting is way harder! But there is a solution that requires no other software: You can remap the Virtual Keys (henceforth: VKs) in the '.klc' file in order to achieve that.</p>
-		<hr>
-		<p>Step 0: Open the '.klc' file of your layout in a text editor of your choice.</p>
-		<p>Step 1: Scroll down to the lines that have symbols/numbers in columns. Look for the column that says 'VK_' at the top, which should be the second column. The letters you see there reflect the layout you opened, so if you type in Dvorak, the letters would read something like PYFCG.</p>
-		<p>Step 2: You will want to alter the 'VK_' column to carry the Qwerty-layout, rather than whatever layout you have loaded up.<p>
-		<p>Step 3: Save the file, and load it back up in MSKLC. If you build and install the layout now, you should be able to use Qwerty's shortcuts.<p>
-		<hr>
-		<p>Regarding Step 2: In order to make your life easier, consider opening a Qwerty.klc file in the text editor and take the layout information from there. In order to get your Qwerty.klc file, click <i>AltMenu > File > Load Existing Keyboard > Qwerty</i>, and then save that to a .klc file.<p>
-		<p> See <a href="http://www.sensefulsolutions.com/2010/08/how-to-fix-keyboard-shortcuts-in-klc-eg.html#which-keys">this page</a>  for information on what can go in the 'VK_' column.</p>
-		
-	<h2 id="3"><a href="#GlobalDiv">▲</a> 03: Remapping System Keys</h2>
-		<p>While MSKLC GUI lets you remap most keys on your keyboard, it does not allow you to remap keys like Capslock, Backspace, Ctrl, and others. However, there is a way to do just that, with a bit more work:</p>
-		<hr>
-		<p>Step 0: Go to this directory: <i>C:\Program Files (x86)\Microsoft Keyboard Layout Creator 1.4\inc</i><br>
-			You might have to look elsewhere if you don't have MSKLC installed on your C-drive.
-		<p>Step 1: Find the <i>kbd.h</i> file and copy it to your desktop. Consider creating a backup of it somewhere.</p>
-		<p>Step 2: Open the <i>kbd.h</i> that now sits on your desktop in a text editor. Scroll down to line 1030.</p>
-		<p>Step 3: Rewrite the VK-information to your liking (details below).</p>
-		<p>Step 4: Save this edited <i>kbd.h</i>-file, copy, and paste your saved file back into <i>C:\Program Files (x86)\Microsoft Keyboard Layout Creator 1.4\inc</i>, replacing the existing <i>kbd.h</i>-file that lives there.</p>
-		<p>Step 5: Re-open MSKLC and build your layout as you normally would. If you now use the newly-installed layout, it should operate with the VKs you defined.</p>
-		<hr>
-		<p>If any of these steps did not work out for you, or if you lost your default <i>kbd.h</i>-file, re-installing MSKLC on your C-drive should help.</p>
-		<p>Generally, MSKLC will always build with whatever <i>.klc</i> file you put in the inc-directory. For instance, if you want to have it build with the default system-keys, copy your <i>kbd.h</i>-backup file back into the inc-directory.</p>
-		<p>Details for Step 3: The Virtual-Key (VK) data is generally stored in the column that reads "kbd type 4" (see below for exceptions). So, for instance, the key with scancode <i>T01</i> has the VK-entry "ESCAPE", which is the escape-key. We can simply edit these text entries in order to remap our VKs. An example: Let's say you want to swap your capslock- and backspace-keys. Using the handy VK-reference below, you will see that the capslock-VK is "CAPITAL" (scancode T3A), while backspace's is "BACK" (scancode T0E). Now, just swap these two text entries, and return to Step 4 to finish the process. As far as I know, you can go pretty wild with re-defining VKs: Duplicate entries seem fine.<p>
-		<p>To make our lives a bit more difficult, however, there are two types of scancodes: ones that are defined equally for all keyboard-types, and ones that are different depending on the keyboard model. You will see those keys differ by designation (<i>EQ</i> for universal VKs, <i>NE</i> for differing VKs) and by the amount of columns they have filled in: EQ needs only one, NE needs all of them. Now, if you want to move an NE-key to an EQ-key, or vice-versa, also make sure to swap the designations in the beginning. Here is an example: Let's say you want to swap the F12-key with the Left-Shift-key. Despite your questionable layout choices, we now also have to take the NE- and EQ-designations into account: "F12" (scancode T58) is an NE-key, while "LSHIFT" (scancode T2A) is an EQ-key. If you swap those entries around, make sure to also swap the NE- and EQ-designations. This is what you could want to end up with: <br>
-		<i>
-		#define T2A _NE(F12,     LEFT,    F12,     F12,     _none_,  OEM_102 )<br>
-		[...]<br>
-		#define T58 _EQ(                           LSHIFT                    )<br> 
-		</i>
-		<p>You could also try to just remove F12's NE-designation completely, replacing it with EQ and only leaving the one, relevant column (F12).<p>
-		
-	<h2 id="4"><a href="#GlobalDiv">▲</a> 04: VK-Reference</h2>
-		<p> Below you can see an image that shows you the scancode and default VK-entry of a given key (see the green key for a legend). Click the image for a larger view. It was created by me using <a href="http://www.keyboard-layout-editor.com/">this handy tool</a>, and since according to the license I am "free to use the [image] for any use whatsoever", I hereby put it in the public domain. The .json-code for the keyboard layout can be found <a href="VK-Layout.json">here</a>.</p>
-		<a href="img/VKGuide.png"target="_blank"><img src="img/VKGuide.png"></a>
-		<p>Additionally, you can find information about some VK-names <a href="https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes">here</a>. <br>
-		Using <a href="https://www.autohotkey.com/">AutoHotKey's</a> "key history and script info" feature can help identify codes, as well.<br>
-		Lastly, you can also view some VK-names by hovering over the respective key with your mouse in MSKLC, although that information does not seem to be congruous with other sources.</p>
-
-		
-		
-	<h2 id="5"><a href="#GlobalDiv">▲</a> 05: The issue with AltGr</h2>
-		<p>Using the AltGr layer in MSKLC can seem like a powerful tool to easily implement layers. By remapping the AltGr-key, you can move the layer-access to wherever you want, granting you even more power. However, since somewhere down the line, the AltGr-key apparently was just a <a href="https://youtu.be/lIFE7h3m40U">bodged</a> solution, it does not come without issues. The problem I experienced was, that when an AltGr-combination was pressed, it would cause the Alt-key to remain stuck in certain situations, until the Alt-key was pressed manually. Some applications or websites just didn't accept my AltGr-layer altogether, instead interpreting it as me trying to use a ctrl-shortcut. By far the best, and simplest, solution I found was to use an <a href="https://www.autohotkey.com/">AutoHotKey</a>-script. AHK is basically an old input-manipulation software. My solution was to simply to have it press Alt and Ctrl whenever I pressed the new AltGr-key, and then release Alt and Ctrl once I released the AltGr-key. This is not perfect, there are still occasional problems. But alas, they are less frequent, and I am finally allowed to use aforementioned applications and websites with my AltGr-layer. My current AHK-script can be found <a href="AltGr.ahk">here</a> (make sure to replace <i>SC039</i> with your scancode. If your AltGr-key is on Capslock, put <i>SC03A</i> instead. If it is the right Windows-key,  put <i>SC15C</i> instead.).</p>
-		
-		
-	<h2 id="6"><a href="#GlobalDiv">▲</a> 06: Uninstalling layouts</h2>
-		<p>Technically, you can see all your layouts in Window's Apps/Programs-list. However, uninstalling the layouts from there can lead to them being bricked in place. That means, the layout is no longer usable, but some data of it still haunts your harddrive. The effects are annoying at most: the layout won't disappear from the Apps/Programs-list, and you won't be able to install a new layout with the same name.</p>
-		<p>The healthier way to uninstall layouts is to keep the <i>.msi</i> and <i>.exe</i> you got when you installed your layout. If you wish to uninstall the layout, just execute the <i>.exe</i> file again, and you should be done. This probably won't work after you tried to do it on the Apps/Programs-list. If you lost your files, either look in the trashbin, or try to re-create them by building the layout again.</p>
-		<p>If a layout remains after uninstallation (possible if a layout is repaired) then it can be removed via the Registry Editor. Run <i>regedit.exe</i> and go to <i>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layouts</i> to view the complete list of keyboard layouts. At the bottom of the list, folders starting with 'a' are custom layouts which can be deleted altogether.</p>
-		<p>There is one last resort if layout data is haunting your harddrive. I do not recommend you do it, because it involves modifying system-files, and it has a success rate of less than 50%, in my experience (that is 50% of successfully removing your layouts from the list, not 50% of you successfully not FUBAR-ing your system). But if you must, here is what you can try to do: <br>
-		Go to these two directories: <i>C:\Windows\System32</i> and <i>C:\Windows\SysWOW64</i>. In both directories, you should be able to find a file <i>YOURLAYOUT.dll</i>, with whatever name you specified in MSKLC. Look for the file in both directories (sorting alphabetically can help), and then delete the file from both. Don't delete any other files, because that can brick your system. Restart once you are done, and hope for the best.</p>
-	
-	<h2 id="7"><a href="#GlobalDiv">▲</a> 07: When MSKLC just isn't enough</h2>
-		<p>MSKLC can do a lot for you, but it is limited: It only allows for one layer, it doesn't allow for layers on system-keys, it does not allow some characters to be specified as input, and generally it is outdated and difficult to use. Here are two alternatives you might want to check out:</p>
-		<p><a href="https://www.autohotkey.com/">AutoHotKey</a> can take inputs and produce outputs. If you want Shift-F5 to input some recurring text, AHK is the best way. If you want your PrntScrn to open the calculator app, use AHK. If you want guaranteed success with 0 failure, and a modern language that makes layers and key-sequences easy, probably look elsewhere. AHK is still powerful, and it being easy to use justifies taking a look if your desires are simple.</p>
-		<p><a href="https://github.com/DreymaR/BigBagKbdTrixPKL">EPKL</a> is something that I should take a more in-depth look at. I have heard only good things about it, and it seems way more modern and flexible than MSKLC and AHK, allowing for lots of layers and portability.</p>
-		
-	<h2 id="last"><a href="#GlobalDiv">▲</a> Acknowledgements</h2>
-		<p>I would like to thank DreymaR for supplying me with information regarding MSKLC, and for developing EPKL. I would like to thank <a href="http://archives.miloush.net/michkap/archive/">Michael Scott Kaplan</a> for creating MSKLC. And I would like to thank all the layout-enthusiasts, especially the Discord folks, for being interested in this frankly esoteric and niche topic.</p>
-		
-		<br><br>
-		
-		<p>If you wish to contact me for feedback or questions, please hit me (Henri) up with a message on Discord.
-		<br><br><br><br>
-		
-	
-
-		&#x25A0
-</div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <title>MSKLC Guide</title>
+  </head>
+  <body>
+    <div id="GlobalDiv">
+      <h1>MSKLC Guide</h1>
+      <p>This guide is not an introduction to the basic features of MSKLC, the Microsoft Keyboard Layout Creator. The application is straightforward enough for most people to be able to understand it by playing around with it. Instead, I would like to spread information about lesser-known functionalities.</p>
+      <div id="NavDiv">
+        <h3 class="Navigation">Navigation:</h3>
+        <a href="#0" class="Navigation"> 00: How to install the latest version of MSKLC </a> <br>
+        <a href="#1" class="Navigation"> 01: Unlocking MSKLC's features </a> <br>
+        <a href="#2" class="Navigation"> 02: Remapping Shortcuts </a> <br>
+        <a href="#3" class="Navigation"> 03: Remapping System Keys </a> <br>
+        <a href="#4" class="Navigation"> 04: VK-Reference </a> <br>
+        <a href="#5" class="Navigation"> 05: The issue with AltGr </a> <br>
+        <a href="#6" class="Navigation"> 06: Uninstalling layouts </a> <br>
+        <a href="#7" class="Navigation"> 07: When MSKLC just isn't enough </a> <br>
+        <a href="#last" class="Navigation"> Acknowledgements </a> <br>
+      </div>
+      </p>
+      <h2 id="0">
+        <a href="#GlobalDiv">▲</a> 00: How to install the latest version of MSKLC
+      </h2>
+      <p>Everything to follow assumes you have MSKLC's latest version installed, which, at the time of writing, is version <i>1.4.6000.2</i>
+      </p>
+      <p>To check MSKLC's version, select "Help" in the menu, and then go on "About". <br>
+        <br>
+        <a href="https://www.microsoft.com/en-us/download/details.aspx?id=102134">Download the latest version</a> - <a href="https://web.archive.org/web/20200810055750/https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe">Another way to download</a>
+      </p>
+      <h2 id="1">
+        <a href="#GlobalDiv">▲</a> 01: Unlocking MSKLC's features
+      </h2>
+      <p>In order to be able to work with all of MSKLC's functionalities, make sure to enable all the settings in <i>AltMenu > View > Options</i>: </p>
+      <a href="img/Options.png" target="_blank">
+        <img src="img/Options.png">
+      </a>
+      <p>Choose whatever keyboard layout type you desire. The layout types only differ cosmetically. Note that the only key position that changes location between the three is the key I coloured red.</p>
+      <h2 id="2">
+        <a href="#GlobalDiv">▲</a> 02: Remapping Shortcuts
+      </h2>
+      <p>Let's say you have changed to Dvorak, but are irritated by the new placements of ZXCV. Now copying and pasting is way harder! But there is a solution that requires no other software: You can remap the Virtual Keys (henceforth: VKs) in the '.klc' file in order to achieve that.</p>
+      <hr>
+      <p>Step 0: Open the '.klc' file of your layout in a text editor of your choice.</p>
+      <p>Step 1: Scroll down to the lines that have symbols/numbers in columns. Look for the column that says 'VK_' at the top, which should be the second column. The letters you see there reflect the layout you opened, so if you type in Dvorak, the letters would read something like PYFCG.</p>
+      <p>Step 2: You will want to alter the 'VK_' column to carry the Qwerty-layout, rather than whatever layout you have loaded up.
+      <p>
+      <p>Step 3: Save the file, and load it back up in MSKLC. If you build and install the layout now, you should be able to use Qwerty's shortcuts.
+      <p>
+      <hr>
+      <p>Regarding Step 2: In order to make your life easier, consider opening a Qwerty.klc file in the text editor and take the layout information from there. In order to get your Qwerty.klc file, click <i>AltMenu > File > Load Existing Keyboard > Qwerty</i>, and then save that to a .klc file.
+      <p>
+      <p> See <a href="http://www.sensefulsolutions.com/2010/08/how-to-fix-keyboard-shortcuts-in-klc-eg.html#which-keys">this page</a> for information on what can go in the 'VK_' column. </p>
+      <h2 id="3">
+        <a href="#GlobalDiv">▲</a> 03: Remapping System Keys
+      </h2>
+      <p>While MSKLC GUI lets you remap most keys on your keyboard, it does not allow you to remap keys like Capslock, Backspace, Ctrl, and others. However, there is a way to do just that, with a bit more work:</p>
+      <hr>
+      <p>Step 0: Go to this directory: <i>C:\Program Files (x86)\Microsoft Keyboard Layout Creator 1.4\inc</i>
+        <br> You might have to look elsewhere if you don't have MSKLC installed on your C-drive.
+      <p>Step 1: Find the <i>kbd.h</i> file and copy it to your desktop. Consider creating a backup of it somewhere. </p>
+      <p>Step 2: Open the <i>kbd.h</i> that now sits on your desktop in a text editor. Scroll down to line 1030. </p>
+      <p>Step 3: Rewrite the VK-information to your liking (details below).</p>
+      <p>Step 4: Save this edited <i>kbd.h</i>-file, copy, and paste your saved file back into <i>C:\Program Files (x86)\Microsoft Keyboard Layout Creator 1.4\inc</i>, replacing the existing <i>kbd.h</i>-file that lives there. </p>
+      <p>Step 5: Re-open MSKLC and build your layout as you normally would. If you now use the newly-installed layout, it should operate with the VKs you defined.</p>
+      <hr>
+      <p>If any of these steps did not work out for you, or if you lost your default <i>kbd.h</i>-file, re-installing MSKLC on your C-drive should help. </p>
+      <p>Generally, MSKLC will always build with whatever <i>.klc</i> file you put in the inc-directory. For instance, if you want to have it build with the default system-keys, copy your <i>kbd.h</i>-backup file back into the inc-directory. </p>
+      <p>Details for Step 3: The Virtual-Key (VK) data is generally stored in the column that reads "kbd type 4" (see below for exceptions). So, for instance, the key with scancode <i>T01</i> has the VK-entry "ESCAPE", which is the escape-key. We can simply edit these text entries in order to remap our VKs. An example: Let's say you want to swap your capslock- and backspace-keys. Using the handy VK-reference below, you will see that the capslock-VK is "CAPITAL" (scancode T3A), while backspace's is "BACK" (scancode T0E). Now, just swap these two text entries, and return to Step 4 to finish the process. As far as I know, you can go pretty wild with re-defining VKs: Duplicate entries seem fine.
+      <p>
+      <p>To make our lives a bit more difficult, however, there are two types of scancodes: ones that are defined equally for all keyboard-types, and ones that are different depending on the keyboard model. You will see those keys differ by designation ( <i>EQ</i> for universal VKs, <i>NE</i> for differing VKs) and by the amount of columns they have filled in: EQ needs only one, NE needs all of them. Now, if you want to move an NE-key to an EQ-key, or vice-versa, also make sure to swap the designations in the beginning. Here is an example: Let's say you want to swap the F12-key with the Left-Shift-key. Despite your questionable layout choices, we now also have to take the NE- and EQ-designations into account: "F12" (scancode T58) is an NE-key, while "LSHIFT" (scancode T2A) is an EQ-key. If you swap those entries around, make sure to also swap the NE- and EQ-designations. This is what you could want to end up with: <br>
+        <i> #define T2A _NE(F12, LEFT, F12, F12, _none_, OEM_102 ) <br> [...] <br> #define T58 _EQ( LSHIFT ) <br>
+        </i>
+      <p>You could also try to just remove F12's NE-designation completely, replacing it with EQ and only leaving the one, relevant column (F12).
+      <p>
+      <h2 id="4">
+        <a href="#GlobalDiv">▲</a> 04: VK-Reference
+      </h2>
+      <p> Below you can see an image that shows you the scancode and default VK-entry of a given key (see the green key for a legend). Click the image for a larger view. It was created by me using <a href="http://www.keyboard-layout-editor.com/">this handy tool</a>, and since according to the license I am "free to use the [image] for any use whatsoever", I hereby put it in the public domain. The .json-code for the keyboard layout can be found <a href="VK-Layout.json">here</a>. </p>
+      <a href="img/VKGuide.png" target="_blank">
+        <img src="img/VKGuide.png">
+      </a>
+      <p>Additionally, you can find information about some VK-names <a href="https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes">here</a>. <br> Using <a href="https://www.autohotkey.com/">AutoHotKey's</a> "key history and script info" feature can help identify codes, as well. <br> Lastly, you can also view some VK-names by hovering over the respective key with your mouse in MSKLC, although that information does not seem to be congruous with other sources. </p>
+      <h2 id="5">
+        <a href="#GlobalDiv">▲</a> 05: The issue with AltGr
+      </h2>
+      <p>Using the AltGr layer in MSKLC can seem like a powerful tool to easily implement layers. By remapping the AltGr-key, you can move the layer-access to wherever you want, granting you even more power. However, since somewhere down the line, the AltGr-key apparently was just a <a href="https://youtu.be/lIFE7h3m40U">bodged</a> solution, it does not come without issues. The problem I experienced was, that when an AltGr-combination was pressed, it would cause the Alt-key to remain stuck in certain situations, until the Alt-key was pressed manually. Some applications or websites just didn't accept my AltGr-layer altogether, instead interpreting it as me trying to use a ctrl-shortcut. By far the best, and simplest, solution I found was to use an <a href="https://www.autohotkey.com/">AutoHotKey</a>-script. AHK is basically an old input-manipulation software. My solution was to simply to have it press Alt and Ctrl whenever I pressed the new AltGr-key, and then release Alt and Ctrl once I released the AltGr-key. This is not perfect, there are still occasional problems. But alas, they are less frequent, and I am finally allowed to use aforementioned applications and websites with my AltGr-layer. My current AHK-script can be found <a href="AltGr.ahk">here</a> (make sure to replace <i>SC039</i> with your scancode. If your AltGr-key is on Capslock, put <i>SC03A</i> instead. If it is the right Windows-key, put <i>SC15C</i> instead.). </p>
+      <h2 id="6">
+        <a href="#GlobalDiv">▲</a> 06: Uninstalling layouts
+      </h2>
+      <p>Technically, you can see all your layouts in Window's Apps/Programs-list. However, uninstalling the layouts from there can lead to them being bricked in place. That means, the layout is no longer usable, but some data of it still haunts your harddrive. The effects are annoying at most: the layout won't disappear from the Apps/Programs-list, and you won't be able to install a new layout with the same name.</p>
+      <p>The healthier way to uninstall layouts is to keep the <i>.msi</i> and <i>.exe</i> you got when you installed your layout. If you wish to uninstall the layout, just execute the <i>.exe</i> file again, and you should be done. This probably won't work after you tried to do it on the Apps/Programs-list. If you lost your files, either look in the trashbin, or try to re-create them by building the layout again. </p>
+      <p>If a layout remains after uninstallation (possible if a layout is repaired) then it can be removed via the Registry Editor. Run <i>regedit.exe</i> and go to <i>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layouts</i> to view the complete list of keyboard layouts. At the bottom of the list, folders starting with 'a' are custom layouts which can be deleted altogether. </p>
+      <p>There is one last resort if layout data is haunting your harddrive. I do not recommend you do it, because it involves modifying system-files, and it has a success rate of less than 50%, in my experience (that is 50% of successfully removing your layouts from the list, not 50% of you successfully not FUBAR-ing your system). But if you must, here is what you can try to do: <br> Go to these two directories: <i>C:\Windows\System32</i> and <i>C:\Windows\SysWOW64</i>. In both directories, you should be able to find a file <i>YOURLAYOUT.dll</i>, with whatever name you specified in MSKLC. Look for the file in both directories (sorting alphabetically can help), and then delete the file from both. Don't delete any other files, because that can brick your system. Restart once you are done, and hope for the best. </p>
+      <h2 id="7">
+        <a href="#GlobalDiv">▲</a> 07: When MSKLC just isn't enough
+      </h2>
+      <p>MSKLC can do a lot for you, but it is limited: It only allows for one layer, it doesn't allow for layers on system-keys, it does not allow some characters to be specified as input, and generally it is outdated and difficult to use. Here are two alternatives you might want to check out:</p>
+      <p>
+        <a href="https://www.autohotkey.com/">AutoHotKey</a> can take inputs and produce outputs. If you want Shift-F5 to input some recurring text, AHK is the best way. If you want your PrntScrn to open the calculator app, use AHK. If you want guaranteed success with 0 failure, and a modern language that makes layers and key-sequences easy, probably look elsewhere. AHK is still powerful, and it being easy to use justifies taking a look if your desires are simple.
+      </p>
+      <p>
+        <a href="https://github.com/DreymaR/BigBagKbdTrixPKL">EPKL</a> is something that I should take a more in-depth look at. I have heard only good things about it, and it seems way more modern and flexible than MSKLC and AHK, allowing for lots of layers and portability.
+      </p>
+      <h2 id="last">
+        <a href="#GlobalDiv">▲</a> Acknowledgements
+      </h2>
+      <p>I would like to thank DreymaR for supplying me with information regarding MSKLC, and for developing EPKL. I would like to thank <a href="http://archives.miloush.net/michkap/archive/">Michael Scott Kaplan</a> for creating MSKLC. And I would like to thank all the layout-enthusiasts, especially the Discord folks, for being interested in this frankly esoteric and niche topic. </p>
+      <br>
+      <br>
+      <p>If you wish to contact me for feedback or questions, please hit me (Henri) up with a message on Discord. <br>
+        <br>
+        <br>
+        <br> &#x25A0
+    </div>
+  </body>
 </html>
